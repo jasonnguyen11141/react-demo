@@ -6,7 +6,7 @@ import './App.css'
 
 const magazines = [
   { id: 1, title: 'Architectural Digest', theme: 'architecture', isAvailable: true },
-  { id: 2, title: 'Dwell', theme: 'architecture', isAvailable: true },
+  { id: 2, title: 'Dwell', theme: 'architecture', isAvailable: false },
   { id: 3, title: 'Communication Arts', theme: 'design', isAvailable: true },
 ];
 
