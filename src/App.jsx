@@ -3,31 +3,53 @@ import reactLogo from './assets/laufey.jpeg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const book = {
+  title: 'A Farewell to Arms',
+  author: 'Earnest Hemingway',
+  published: '1929',
+  image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/A_Farewell_to_Arms_%281929%29_cover.jpg/440px-A_Farewell_to_Arms_%281929%29_cover.jpg',
+  width: '264',
+  height: '378'
+};
+
+function Bookshelf() {
+  return (
+    <div>
+      {/* Components can't return multiple JSX tags unless they are wrapped in a parent element */}
+      {/* This is a JSX comment */}
+      <h2>{book.title} ({book.published})</h2>
+      <p>{book.author}</p>
+      {/* This a conditional that checks if an image exists before displaying it */}
+      {book.image &&
+      <img
+        className="bookCover"
+        src={book.image}
+        alt={book.title + ' cover'}
+        style={{
+          width: book.width,
+          height: book.height
+        }}
+      />
+      }
+    </div>
+  );
+}
+
+function MagicButton(){
+  return(
+    <div>
+      <h3> This is a Magic Button</h3>
+    <button>Magic</button>
+    </div>
+  );
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Bookshelf/>
     </>
   )
 }
